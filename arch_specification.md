@@ -44,10 +44,14 @@ of an R-type instruction is:
 | Load Word | R | Loads the value at the memory address in register B into register A. | lw $a $b | 0x6 / 0b110 |
 | Store Word | R | Stores the value in register A into the address in register B. | sw $a $b | 0x7 / 0b111 |
 | Move Register | R | Stores the value in register B in register A. | mov $a $b | 0x8 / 0b1000 |
+| Jump If Equal | R | Jumps to the address in register A if the value in register B equals 0. | jeq $a $b | 0x9 / 0b1001 |
+| Jump If Less Than | R | Jumps to the address in register A if the value in register B is less than 0. | jlt $a $b | 0xA / 0b1010 |
+| Jump If Greater Than | R | Jumps to the address in register A if the value in register B is greater than 0. | jgt $a $b | 0xB / 0b1011 |
 | Add Immediate | I | Add the immediate value n to register A. | addi $a n | 0x10 / 0b10000 |
 | Sub Immediate | I | Subtract the immediate value n from register A. | subi $a n | 0x11 / 0b10001 |
 | And Immediate | I | Logical AND A and the immediate value n together, store the result in A. | andi $a n | 0x12 / 0b10010 |
 | Or Immediate | I | Logical OR A and the immediate value n together, store the result in A. | ori $ a n | 0x13 / 0b10011 |
+| Jump | I | Jumps unconditionally to the address in register A plus an optional immediate offset n. | jmp $a [n] | 0x14 / 0b10100 |
 
 
 ## ALU
